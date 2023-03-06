@@ -9,7 +9,8 @@
 <body>
 
 <button>나를 눌러봐</button> <br>
-<span></span>
+<span></span> <br>
+<div></div>
 
 
 <script 
@@ -22,10 +23,15 @@
 		
 		$.ajax({
 			type : "get" ,
-			url : "/quiz/quiz1" ,   
+			url : "/quiz/quiz1" ,   //응답! Hi>,<
+			//data : 보내는거 없음
+			//dataType : "text" ,     // 받아오는 데이터 생략 가능
+			//contentType : 보내는거 없음
 			success : function(data){     
 				console.log("받아온 데이터 : ",data)
 				$("span").prepend(data);
+				$("div").text(data);
+				
 			}		
 		});			
 	});
