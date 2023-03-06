@@ -90,17 +90,30 @@ public class SampleController {
 	}
 	*/
 	
+	
 	//클라이언트에서(자바스크립트로) 서버로 sampleVO 형태의 json 타입으로 테이터를 보낼때...
 	//{"mno":123,"firstName":"홍","lastName":"길동"}
-	//playload 에 위에 json형식의 값을 실어서 보내면(저기에 적으면) 테스트 됨!
-	@PostMapping(value="getSample", produces="text/plain;charset=UTF-8")
-	public String gogo(@RequestBody SampleVO vo) {    //@RequestBody 어노테이션 안하면 객체의 파라미터 보낸거고, 어노테이션해야 바디에 실어서 보내는거다
+	//playload 에 위에 json형식의 값을 실어서 보내면(저기에 적으면) 테스트 됨!	
+//	@PostMapping(value="getSample")
+//	public String gogo(@RequestBody SampleVO vo) {    //@RequestBody 어노테이션 안하면 객체의 파라미터 보낸거고, 어노테이션해야 바디에 실어서 보내는거다
+//		log.info("수집된 값: "+vo);
+//		return "gogo";
+//		//produces="text/plain;charset=UTF-8" 안적으면, YARC 테스트시 자동으로 json 타입으로 읽어서! 
+//		//gogo는 json타입이 아니라서 테스트 프로그램에서 상태는 200인데 오류가 뜸 
+//		//그래서 정확한 타입을 맞게 선언해주면 테스트 잘됨!
+//		//그러니까 보내는 데이터의 타입을 제대로 선언해줘야해
+//	}
+	
+	
+	@PostMapping(value="getSample")
+	public SampleVO gogo(@RequestBody SampleVO vo) {    //@RequestBody 어노테이션 안하면 객체의 파라미터 보낸거고, 어노테이션해야 바디에 실어서 보내는거다
 		log.info("수집된 값: "+vo);
-		return "gogo";
+		return vo;
+		//produces="text/plain;charset=UTF-8" 안적으면, YARC 테스트시 자동으로 json 타입으로 읽어서! 
+		//gogo는 json타입이 아니라서 테스트 프로그램에서 상태는 200인데 오류가 뜸 
+		//그래서 정확한 타입을 맞게 선언해주면 테스트 잘됨!
+		//그러니까 보내는 데이터의 타입을 제대로 선언해줘야해
 	}
-	
-	
-	
 	
 	
 	
