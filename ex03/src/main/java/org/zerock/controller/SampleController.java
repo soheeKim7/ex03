@@ -90,7 +90,7 @@ public class SampleController {
 	}
 	*/
 	
-	
+	// produces=MediaType.APPLICATION_JSON_VALUE   json타입
 	//클라이언트에서(자바스크립트로) 서버로 sampleVO 형태의 json 타입으로 테이터를 보낼때...
 	//{"mno":123,"firstName":"홍","lastName":"길동"}
 	//playload 에 위에 json형식의 값을 실어서 보내면(저기에 적으면) 테스트 됨!	
