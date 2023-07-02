@@ -50,7 +50,7 @@
 			console.log("자바스크림트로 만든 객체 : ",obj);  //obj 자바스크립트 객체
 			var jsondata=JSON.stringify(obj);  //obj 자바스크림트 객체를 json포맷으로 변경
 			console.log("json 포맷 : ",jsondata);
-			//$("span").prepend("되는건가?");
+			$("span").prepend("되는건가?");
 			
 			$.ajax({
 				type : "post" ,
